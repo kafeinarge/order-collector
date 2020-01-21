@@ -1,25 +1,63 @@
+## LOGGING
+##logging:
+##  level:
+##   org.springframework.web: DEBUG
+##
+##
+##  # APPLICATION
+##spring:
+##  application:
+##   name: turkcell-crm-order-management
+##  # MONGODB
+##  data:
+##    mongodb:
+##      authentication-database: admin
+##      database: ${MONGO_INITDB_DATABASE}
+##      host: mongodb-service
+##      port: ${MONGO_INITDB_PORT}
+##      username: root
+##      password: ${MONGO_INITDB_ROOT_PASSWORD}
+##
+##kafka-client-id: crmorderclient
+##kafka-bootstrap-servers: kafka-service:9092
+##kafka-consumer-key-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+##kafka-consumer-value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+##auto_commit_interval_ms_config: 1000
+##session_timeout_ms_config: 30000
+##
+##kafka-order-topic: crmorder
+##kafka-order-group-id: order-collector
+##
+##server:
+##  port: 8080
+##  servlet:
+##    context-path: /order-collector
+
+
+
 # LOGGING
 logging:
   level:
-   org.springframework.web: DEBUG
+    org.springframework.web: DEBUG
 
 
   # APPLICATION
 spring:
   application:
-   name: turkcell-crm-order-management
+    name: turkcell-crm-order-management
   # MONGODB
   data:
     mongodb:
       authentication-database: admin
-      database: ${MONGO_INITDB_DATABASE}
-      host: mongodb-service
-      port: ${MONGO_INITDB_PORT}
-      username: root
-      password: ${MONGO_INITDB_ROOT_PASSWORD}
-      
+      database: turkcell-crm
+      host: localhost
+      port: 27017
+      username: admin
+      password: pass
+
 kafka-client-id: crmorderclient
-kafka-bootstrap-servers: kafka-service:9092
+kafka-bootstrap-servers: 165.22.22.133:31847
+#kafka-bootstrap-servers: localhost:9200
 kafka-consumer-key-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
 kafka-consumer-value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 auto_commit_interval_ms_config: 1000
@@ -27,8 +65,8 @@ session_timeout_ms_config: 30000
 
 kafka-order-topic: crmorder
 kafka-order-group-id: order-collector
-      
+
 server:
-  port: 8080
+  port: 8085
   servlet:
-    context-path: /order-collector
+    context-path: /collector

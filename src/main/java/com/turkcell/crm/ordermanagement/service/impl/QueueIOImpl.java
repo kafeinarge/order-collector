@@ -12,7 +12,6 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -59,7 +58,6 @@ public class QueueIOImpl implements QueueIO {
      *
      */
     @Override
-    @PostConstruct
     public void queueToDocumentDB() throws InterruptedException {
         KafkaConsumer<String, String> consumer = createKafkaConsumer();
 
@@ -102,6 +100,5 @@ public class QueueIOImpl implements QueueIO {
 
         return new KafkaConsumer<>(configProperties);
     }
-
 
 }
