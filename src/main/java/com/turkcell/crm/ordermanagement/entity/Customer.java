@@ -5,12 +5,12 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @ToString
-@EqualsAndHashCode(of = "tckn")
+@EqualsAndHashCode(of = "identityNumber")
 @Data
 public class Customer {
 
     private String name;
 
-    private String tckn;
+    private String identityNumber;
 
 }

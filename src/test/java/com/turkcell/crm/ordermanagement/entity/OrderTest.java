@@ -48,7 +48,7 @@ public class OrderTest {
 
     private Customer createCustomer() {
         Customer customer = new Customer();
-        customer.setTckn("XDHJ7846");
+        customer.setIdentityNumber("XDHJ7846");
         customer.setName("Fiber Internet");
         return customer;
     }
